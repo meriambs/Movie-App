@@ -31,10 +31,23 @@ class App extends React.Component{
 
         }
     ],
+    // searchTerm:"",
+    rating:1,
   };
+  
     Add =(newMovie)=>{
       this.setState({
         movies:this.state.movies.concat(newMovie),
+      })
+    }
+    // getSearch=(ValueSearch)=>{
+    //   this.setState({
+    //     searchTerm:ValueSearch,
+    //   })
+    // }
+    getRating=(ValueRating)=>{
+      this.setState({
+        rating:ValueRating,
       })
     }
   render()
@@ -43,7 +56,8 @@ class App extends React.Component{
     <div className="App">
       <header className="App-header">
         <h1>Welcome To Our Movie App</h1>
-        <Rating/>
+        {/* <Search search={(s)=>this.getSearch(s)}/> */}
+        <Rating rating={(R)=>this.getRating(R)} />
        <div className="cardpart">
          <MovieList movies={this.state.movies}/>
          <AddModal addMovie={(newMovie)=>this.Add(newMovie)} />
