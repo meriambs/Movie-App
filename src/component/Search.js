@@ -1,21 +1,21 @@
 import React ,{useState} from 'react';
 import SearchMovie from './SearchMovie';
-function Search (){
+function Search ( {setMovieList , allMovies}){
 
 const [state , setState]=useState({
-    s:"",
-    result:[],
-    selected:{},
+    searchword:"",
+   
 });
 
 
 const changeruserInput=(e)=>{
- let s=e.target.value;
+ let searchword=e.target.value;
 
 setState(prevState =>{
-    return {...prevState , s:s}
+    return {...prevState , searchword:searchword}
 });
- console.log(state.s)
+ 
+ setMovieList(allMovies.filter(el => el.name.includes(state.searchword)))
 }
 
     return (<section>

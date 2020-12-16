@@ -1,4 +1,4 @@
-import React  from 'react';
+import React , {useState} from 'react';
 import './App.css';
 
 import { v4 as uuidv4 } from 'uuid';
@@ -6,9 +6,8 @@ import MovieList from "./component/MovieList";
 import AddModal from "./component/AddModal";
 import Rating from './component/Rating';
 import Search from './component/Search'
-class App extends React.Component{
-  state={
-    movies:[
+
+const movies=[
         { id:uuidv4 (),
           name:"inception",
           image:"./Image/scdmovie.jpg",
@@ -30,39 +29,39 @@ class App extends React.Component{
           year:"2016",
 
         }
-    ],
+    ];
    
-    rating:1,
-  };
+
+const App=(props)=>{
+  const [rating, setRating]= useState(1);
+  const [movieList , setMovieList]= useState(movies);
+
+   const [allMovies , setAllMovies]= useState(movies);
   
-    Add =(newMovie)=>{
-      this.setState({
-        movies:this.state.movies.concat(newMovie),
-      })
+
+   const Add =(newMovie)=>{
+     setAllMovies([...allMovies , newMovie])
     }
 
-    getRating=(ValueRating)=>{
-      this.setState({
-        rating:ValueRating,
-      })
+  const  getRating=(ValueRating)=>{
+      setRating(ValueRating)
     }
-  render()
-  {
+  
     return (
     <div className="App">
       <header className="App-header">
         <h1>Welcome To Our Movie App</h1>
         <div className="Search">
-          <Search/>
+          <Search setMovieList={setMovieList} allMovies ={allMovies }  />
         </div>
-        <Rating rating={(R)=>this.getRating(R)} />
+        <Rating rating={(R)=>getRating(R)} />
        <div className="cardpart">
-         <MovieList movies={this.state.movies}/>
-         <AddModal addMovie={(newMovie)=>this.Add(newMovie)} />
+         <MovieList movies={movieList}/>
+         <AddModal addMovie={(newMovie)=>Add(newMovie)} />
        </div>
       </header>
     </div>
-  );}
+  );
 }
 
 export default App;
