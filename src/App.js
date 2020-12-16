@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import MovieList from "./component/MovieList";
 import AddModal from "./component/AddModal";
 import Rating from './component/Rating';
-
+import SearchMovie from './component/SearchMovie'
 class App extends React.Component{
   state={
     movies:[
@@ -56,6 +56,9 @@ class App extends React.Component{
     <div className="App">
       <header className="App-header">
         <h1>Welcome To Our Movie App</h1>
+        <div className="Search">
+          <SearchMovie/>
+        </div>
         {/* <Search search={(s)=>this.getSearch(s)}/> */}
         <Rating rating={(R)=>this.getRating(R)} />
        <div className="cardpart">
