@@ -18,6 +18,11 @@ handelchange=(event)=>{
         [event.target.name] : event.target.value,
     })
 }
+ handelAdd=()=>{
+     console.log(this.state);
+     this.props.addMovie(this.state);
+     this.handelShow();
+ }
     render()
     {
         return (
@@ -43,7 +48,7 @@ handelchange=(event)=>{
   </Modal.Body>
        <Modal.Footer>
     <Button variant="secondary" onClick={this.handelShow} >Close</Button>
-    <Button variant="primary">Save and Add</Button>
+    <Button variant="primary" onClick={this.handelAdd.bind(this)} >Save and Add</Button>
   </Modal.Footer>
       </Modal>
       </section>)}

@@ -11,8 +11,6 @@ function  SearchMovie ({changeruserInput }){
    placeholder="What Are You Looking For ..."
    className="searchbox"
     onChange={changeruserInput}/>
-
-  <button type="submit"  >OK</button>
         </section>
    )
   

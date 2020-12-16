@@ -14,8 +14,11 @@ const changeruserInput=(e)=>{
 setState(prevState =>{
     return {...prevState , searchword:searchword}
 });
- 
- setMovieList(allMovies.filter(el => el.name.includes(state.searchword)))
+ if (searchword !=="" )
+ { setMovieList(allMovies.filter(el => el.name.includes(searchword)))}
+ else {
+     setMovieList(allMovies);
+ }
 }
 
     return (<section>

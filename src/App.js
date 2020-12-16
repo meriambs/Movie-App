@@ -40,7 +40,8 @@ const App=(props)=>{
   
 
    const Add =(newMovie)=>{
-     setAllMovies([...allMovies , newMovie])
+     setAllMovies([...allMovies , newMovie]);
+     setMovieList([...allMovies , newMovie]);
     }
 
   const  getRating=(ValueRating)=>{
@@ -57,7 +58,7 @@ const App=(props)=>{
         <Rating rating={(R)=>getRating(R)} />
        <div className="cardpart">
          <MovieList movies={movieList}/>
-         <AddModal addMovie={(newMovie)=>Add(newMovie)} />
+         <AddModal addMovie={Add} />
        </div>
       </header>
     </div>
