@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import MovieList from "./component/MovieList";
 import AddModal from "./component/AddModal";
 import Rating from './component/Rating';
-import SearchMovie from './component/SearchMovie'
+import Search from './component/Search'
 class App extends React.Component{
   state={
     movies:[
@@ -31,7 +31,7 @@ class App extends React.Component{
 
         }
     ],
-    // searchTerm:"",
+   
     rating:1,
   };
   
@@ -40,11 +40,7 @@ class App extends React.Component{
         movies:this.state.movies.concat(newMovie),
       })
     }
-    // getSearch=(ValueSearch)=>{
-    //   this.setState({
-    //     searchTerm:ValueSearch,
-    //   })
-    // }
+
     getRating=(ValueRating)=>{
       this.setState({
         rating:ValueRating,
@@ -57,9 +53,8 @@ class App extends React.Component{
       <header className="App-header">
         <h1>Welcome To Our Movie App</h1>
         <div className="Search">
-          <SearchMovie/>
+          <Search/>
         </div>
-        {/* <Search search={(s)=>this.getSearch(s)}/> */}
         <Rating rating={(R)=>this.getRating(R)} />
        <div className="cardpart">
          <MovieList movies={this.state.movies}/>
