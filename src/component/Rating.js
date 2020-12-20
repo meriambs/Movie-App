@@ -1,5 +1,6 @@
-import React , {component}from 'react';
+import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
+
 
 class Rating extends React.Component{
     state = {
@@ -9,7 +10,11 @@ class Rating extends React.Component{
      onStarClick = (nextValue, prevValue, name)=> {
     this.setState({rating: nextValue});
     this.props.rating(nextValue);
+     const{setMovieList,movieList}=this.props;
+     const nexMovieList=movieList.filter(el=>el.rating === nextValue);
+     setMovieList(nexMovieList);
   }
+
     render(){
         return (
             <div className="ratingpart">

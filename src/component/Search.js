@@ -1,5 +1,6 @@
 import React ,{useState} from 'react';
 import SearchMovie from './SearchMovie';
+
 function Search ( {setMovieList , allMovies}){
 
 const [state , setState]=useState({

@@ -55,7 +55,7 @@ const App=(props)=>{
         <div className="Search">
           <Search setMovieList={setMovieList} allMovies ={allMovies }  />
         </div>
-        <Rating rating={(R)=>getRating(R)} />
+        <Rating rating={(R)=>getRating(R)} setMovieList={setMovieList} movieList={allMovies} />
        <div className="cardpart">
          <MovieList movies={movieList}/>
          <AddModal addMovie={Add} />
