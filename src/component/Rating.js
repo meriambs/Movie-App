@@ -19,7 +19,7 @@ class Rating extends React.Component{
         return (
             <div className="ratingpart">
  <StarRatingComponent value={this.state.rating}
-  renderStarIcon={() => <span>*</span>}
+  
    onStarClick={this.onStarClick} />
     
             </div>

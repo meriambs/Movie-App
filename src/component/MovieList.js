@@ -5,19 +5,23 @@ import StarRatingComponent from 'react-star-rating-component';
 const MovieList= (props)=>{
     
 return (
-    <section className="MovieList">
+    <section className="MovieList" >
+      <div className="contenaire" style={{display:"flex",justifyContent:"space-between",flexWrap:"wrap"}} >
      {props.movies.map(el=> <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={el.image} />
-  <Card.Body>
+  <Card.Body style={{color:"black"}}>
     <Card.Title>{el.name}</Card.Title>
     <Card.Text>
      {el.year}
     </Card.Text>
-    <StarRatingComponent value={el.rating} renderStarIcon={() => <span>*</span>}/>
+     <Card.Text>
+     {el.description}
+    </Card.Text>
+    <StarRatingComponent value={el.rating}/>
     
   </Card.Body>
 </Card>)}
-
+</div>
     </section>
 )
 }
