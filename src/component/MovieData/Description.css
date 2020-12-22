@@ -1,4 +1,4 @@
-.textpart {
+/* .textpart {
   display: flex;
   justify-content: flex-end;
   margin-right: 55px;
@@ -25,7 +25,6 @@
   margin-right: 4%;
 }
 .photopart {
-  margin-top: -40%;
   margin-left: 7%;
   border: solid gray 5px;
 }
@@ -35,4 +34,4 @@
   margin-top: 20%;
   margin-left: 24%;
   margin-right: 21%;
-}
+} */

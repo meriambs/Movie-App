@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 export const movies=[
         { id:uuidv4 (),
+           photo:"../../Image/photo1.jpeg",
           name:"Howl’s Moving Castle (ハウルの動く城)",
           image:"../../Image/howlsmovie.jpg",
           rating:4,
