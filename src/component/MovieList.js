@@ -1,7 +1,12 @@
 import React from 'react';
-import { Card} from 'react-bootstrap';
+import { Card , Button} from 'react-bootstrap';
 import StarRatingComponent from 'react-star-rating-component';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 const MovieList= (props)=>{
     
 return (
@@ -20,7 +25,11 @@ return (
     <StarRatingComponent value={el.rating}/>
     
   </Card.Body>
-</Card>)}
+  <Link to={`/description/movie/${el.id}`}>
+  <Button variant="primary" >Some Details</Button>
+  </Link>
+</Card>)
+}
 </div>
     </section>
 )
