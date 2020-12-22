@@ -25,13 +25,14 @@
   margin-right: 4%;
 }
 .photopart {
-  border: solid;
-  margin-top: -22%;
-  margin-right: 54%;
-  margin-left: 2%;
+  margin-top: -40%;
+  margin-left: 7%;
+  border: solid gray 5px;
 }
 .videopart {
   border: solid;
   margin-bottom: -6%;
-  margin-top: 35%;
+  margin-top: 20%;
+  margin-left: 24%;
+  margin-right: 21%;
 }
