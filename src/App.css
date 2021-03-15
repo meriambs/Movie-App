@@ -399,8 +399,11 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  /* background: url('../img/showcase.jpg') no-repeat center center/cover; */
+ background-image: url(https://data.photofunky.net/output/image/d/1/9/d/d19da6/photofunky.gif);
   height: 100vh;
+   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .landing-inner {

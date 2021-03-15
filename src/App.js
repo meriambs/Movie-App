@@ -6,6 +6,7 @@ import NavBar from './NavBar/NavBar';
 import Enregistrement from "./auth/Enregistrement";
 import Login from "./auth/Login";
 import Description from "./component/MovieData/Description";
+import About from "./About/About";
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,11 +25,15 @@ const App=()=>{
            <NavBar/>
       {/* ici nous avpon l route principale */}
               <Route exact path="/" component={Front}></Route>
+              <switch>
+                 <Route path="/description/movie/:id" component={Description} />
+              </switch>
   <section  className="container">
             <Switch> 
             {/* ici nous avpon sles routes apres click sur les boutoons ou navbar */}
               <Route exact path="/home" component={Home}/>
-              <Route path="/description/movie/:id" component={Description} />
+              <Route exact path="/About" component={About}/>
+              {/* <Route path="/description/movie/:id" component={Description} /> */}
               <Route path="/Login" component={Login} />
               <Route path="/Enregistrement" component={Enregistrement} />
             </Switch>  

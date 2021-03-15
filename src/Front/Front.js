@@ -8,7 +8,21 @@ import {Link} from "react-router-dom";
 const Front = () => {
     return (
         <div>
-     <h1>ici test Front</h1>
+      <section className="landing">
+      <div className="dark-overlay">
+        <div className="landing-inner">
+          <h1 className="x-large">Let's Have a Good Time </h1>
+          {/* <p className="lead">
+            Have a good Time 
+          </p> */}
+          <div className="buttons">
+            <Link to ="/Home" className="btn btn-primary">L'ets Start</Link>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  
         </div>
     )
 }
