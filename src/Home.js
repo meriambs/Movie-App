@@ -1,5 +1,5 @@
 import React , {useState} from 'react';
-import './App.css';
+
 import MovieList from "./component/MovieList";
 import AddModal from "./component/AddModal";
 import Rating from './component/Rating';
@@ -24,7 +24,7 @@ const App=(props)=>{
   
     return (
     <div className="App" >
-    
+   
         <h1 style={{display:"flex",justifyContent:"center",marginTop:"55px"}}>Welcome To Our Movie App</h1>
         <div className="Searchpart" style={{display:"flex",justifyContent:"center"}}>
           <Search setMovieList={setMovieList} allMovies ={allMovies }  />

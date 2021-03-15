@@ -1,26 +1,38 @@
 import React from 'react';
 import './App.css';
 import Home from './Home';
+import Front from './Front/Front';
+import NavBar from './NavBar/NavBar';
+import Enregistrement from "./auth/Enregistrement";
+import Login from "./auth/Login";
 import Description from "./component/MovieData/Description";
 import {
   BrowserRouter as Router,
   Switch,
-  Route} from "react-router-dom";
+  Route, Link} from "react-router-dom";
+  import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+
 
 const App=()=>{
  
   
     return (
     <div className="App" >
-     <Router>
-       <Switch>
-          <Route exact path="/home">
-            <Home/>
-          </Route>
-       <Route path="/description/movie/:id">
-            <Description />
-          </Route>
-          </Switch> 
+     {/* ne jamais oublier si tu vexu creer un router tu dois mettre a l'interieur ce que tu veux  */}
+           <Router>
+           <NavBar/>
+      {/* ici nous avpon l route principale */}
+              <Route exact path="/" component={Front}></Route>
+  <section  className="container">
+            <Switch> 
+            {/* ici nous avpon sles routes apres click sur les boutoons ou navbar */}
+              <Route exact path="/home" component={Home}/>
+              <Route path="/description/movie/:id" component={Description} />
+              <Route path="/Login" component={Login} />
+              <Route path="/Enregistrement" component={Enregistrement} />
+            </Switch>  
+ </section>
              </Router> 
     </div>
   );
